@@ -10,11 +10,8 @@ const CardSection = (props) => {
 };
 const styles = {
     containerStyle: {
-        // alignItems: 'center',
-        // justifyContent: 'center',
         borderBottomWidth: 1,
         padding: 5,
-        // height: 80,
         backgroundColor: '#fff',
         justifycontent: 'space-between',
         flexDirection: 'row',
