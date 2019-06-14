@@ -6,8 +6,9 @@ import { StackNavigator } from 'react-navigation';
 
 const Followers = ({ navigation }) => {
     return (
-        <View>
-            <Text>Filter</Text>
+        <View
+            style = {{alignItems: 'center'}}>
+            <Text>Coming Soon</Text>
         </View>
     );
 };

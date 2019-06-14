@@ -98,9 +98,6 @@ class Repositories extends Component {
             }
 
         }
-        this.setState({
-            languageInData: newElement
-        })
         return this.state.dataRepository.map((data) => {
 
 
@@ -132,9 +129,9 @@ class Repositories extends Component {
         this.setState({ value: value });
     }
     buildMenu = () => {
-        return this.state.languageInData.map((data) => {
+        return this.state.dataRepository.map((data) => {
 
-            return <Option value={data}>{data}</Option>
+            return <Option value={data.language}>{data.language}</Option>
         }
         )
     }
@@ -170,19 +167,9 @@ class Repositories extends Component {
                             backdropStyle={{ backgroundColor: "#d3d5d6" }}
                             optionListStyle={{ backgroundColor: "#F5FCFF" }}
                         >
-
                             {this.buildMenu()}
-
-
                         </Select>
-
                     </View>
-                    <View style={{ width: 50, alignContent: "center", justifyContent: 'center', }}>
-                        <Button onPress={() => { }}
-                            title="New"
-                        />
-                    </View>
-
                 </View>
 
 
@@ -202,9 +189,7 @@ const style = {
 
     },
     input: {
-        margin: 15,
-        height: 40,
-        width: 120,
+        flex: 1,
         borderColor: '#7a42f4',
         borderWidth: 1
     },

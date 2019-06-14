@@ -6,9 +6,10 @@ import { StackNavigator } from 'react-navigation';
 
 const Overview = ({ navigation }) => {	
 		return (
-			<View>
-            <Text>Filter</Text>
-            </View>
+			<View
+            style = {{alignItems: 'center'}}>
+            <Text>Coming Soon</Text>
+        </View>
           );
 	};
 

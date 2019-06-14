@@ -21,7 +21,6 @@ const TabView = TabNavigator({
       labelStyle: { color: 'black' },
       upperCaseLabel: false,
       pressColor: 'grey',
-      // showLabel: false
     },
   });
 
