@@ -11,9 +11,7 @@ class Repositories extends Component {
         this.state = {
             isLoading: true,
             dataRepository: [],
-            languageInData: [],
             searchText: '',
-            text: '',
             value: "All"
 
         }
@@ -59,45 +57,11 @@ class Repositories extends Component {
     onSelect(value, label) {
         this.setState({ value: value });
     }
-    remove_duplicates(arr) {
-        var obj = {};
-        var ret_arr = [];
-        for (var i = 0; i < arr.length; i++) {
-            obj[arr[i]] = true;
-        }
-        for (var key in obj) {
-            ret_arr.push(key);
-        }
-        return ret_arr;
-    }
+
 
     renderCards = () => {
-        var element = [];
-        var i = 0;
-        this.state.dataRepository.map((data) => {
-            element[i++] = data.language;
-        })
-        console.log("data..." + element)
-        var newElement = [];
-        for (var i = 0; i < element.length; i++) {
-            var count = 0;
-            for (var j = 0; j < element.length; j++) {
-                if (j < i && element[i] == element[j]) {
-                    break;
-                }
 
 
-                if (element[i] == element[j]) {
-                    count = count + 1;
-                }
-                if (j >= element.length - 1) {
-
-                    newElement[i] = element[i]
-
-                }
-            }
-
-        }
         return this.state.dataRepository.map((data) => {
 
 
@@ -131,7 +95,7 @@ class Repositories extends Component {
     buildMenu = () => {
         return this.state.dataRepository.map((data) => {
 
-            return <Option value={data.language}>{data.language}</Option>
+            return data.language == null ? "" : <Option key={data.id} value={data.language}>{data.language}</Option>
         }
         )
     }
