@@ -11,7 +11,9 @@ class Repositories extends Component {
         this.state = {
             isLoading: true,
             dataRepository: [],
+
             searchText: '',
+
             value: "All"
 
         }
@@ -93,9 +95,41 @@ class Repositories extends Component {
         this.setState({ value: value });
     }
     buildMenu = () => {
-        return this.state.dataRepository.map((data) => {
+        // char[] stringCharArry=name.toCharArray();
+        const elemntWithoutDublicate = [];
+        const elementLang = [];
+        var k = 0;
+        this.state.dataRepository.map((data) => {
+            elemntWithoutDublicate[k++] = data.language;
 
-            return data.language == null ? "" : <Option key={data.id} value={data.language}>{data.language}</Option>
+        });
+        console.log("data" + elemntWithoutDublicate);
+        var n = 0;
+        for (var i = 0; i < this.state.dataRepository.length; i++) {
+
+            for (var j = 0; j < elemntWithoutDublicate.length; j++) {
+                if (j < i && elemntWithoutDublicate[i] == elemntWithoutDublicate[j]) {
+                    break;
+                }
+
+
+                if (elemntWithoutDublicate[i] == elemntWithoutDublicate[j]) {
+                    // count = count + 1;
+                }
+                if (j >= elemntWithoutDublicate.length - 1) {
+                    elementLang[n++] = elemntWithoutDublicate[i];
+
+
+                }
+            }
+
+        }
+
+        console.log("data is..." + elementLang);
+
+        return elementLang.map((data) => {
+
+            return data == null ? '' : <Option value={data}>{data}</Option>
         }
         )
     }
@@ -159,4 +193,4 @@ const style = {
     },
 }
 
-export default Repositories; 
+export default Repositories;
