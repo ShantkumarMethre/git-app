@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.8.3",
-    "react-native": "^0.49.5",
+    "react-native": "^0.70.6",
     "react-native-chooser": "^1.7.0",
     "react-native-drawer-layout": "^2.0.0",
     "react-native-dropdown-menu": "^2.0.0",
